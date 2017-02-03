@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music App</title>
+
+	 <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="css/main.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-app= "MusicApp">
+	<section ng-controller="SongListCtrl">
+	<h1>{{title}}</h1>
+
+		<div>
+				<input type="text" ng-model="text">
+				<div>{{texts}}</div>
+		</div>
+		<div>
+			<ul ng-repeat='song in songs'>
+			<li>{{song.title}}</li>
+			</ul>
+		</div>
+
+		
+	</section>
+	<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="lib/bower_components/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
+
+  <script type="text/javascript" src="app/app.js"></script>
+
+
+  <script type="text/javascript" src="app/factories/AuthFactory.js"></script>
+  <script type="text/javascript" src="app/factories/SongFactory.js"></script>
+  <script type="text/javascript" src="app/factories/FilterFactory.js"></script>
+
+
+
+
+   <script type="text/javascript" src="app/controller/SongListCtrl.js"></script>
+   <script type="text/javascript" src="app/controller/SongDetailCtrl.js"></script>
+   <script type="text/javascript" src="app/controller/AlbumCtrl.js"></script>
+   <script type="text/javascript" src="app/controller/ArtistCtrl.js"></script>
+   <script type="text/javascript" src="app/controller/LogInCtrl.js"></script>
+   <script type="text/javascript" src="app/controller/NavCtrl.js"></script>
+
+
+</body>
+</html>
