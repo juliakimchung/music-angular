@@ -8,21 +8,8 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body ng-app= "MusicApp">
-	<section ng-controller="SongListCtrl">
-	<h1>{{title}}</h1>
-
-		<div>
-				<input type="text" ng-model="text">
-				<div>{{texts}}</div>
-		</div>
-		<div>
-			<ul ng-repeat='song in songs'>
-			<li>{{song.title}}</li>
-			</ul>
-		</div>
-
-		
-	</section>
+<div ng-view></div>
+	
 	<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js">
   </script>
@@ -31,7 +18,7 @@
   <script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
 
   <script type="text/javascript" src="app/app.js"></script>
-
+  <script type="text/javascript" src="app/values/fb-creds.js"></script>
 
   <script type="text/javascript" src="app/factories/AuthFactory.js"></script>
   <script type="text/javascript" src="app/factories/SongFactory.js"></script>

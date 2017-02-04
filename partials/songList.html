@@ -1,0 +1,22 @@
+<div>
+	<h1>{{title}}</h1>
+	<div>
+  Grouped tasks:
+  <select
+      ng-model="theSongs"
+      ng-options="value.title group by value.artist for value in songs">
+  </select>
+</div>
+
+		<div>
+				<input type="text" ng-model='searchTermData'>
+				<div>{{texts}}</div>
+		</div>
+		<div>
+			<ul ng-repeat='song in songs | filter: searchTermData'>
+			<li>{{song.title}}<button ng-click='killSong(song)'>Finish</button></li>
+			</ul>
+		</div>
+</div>
+
+	
