@@ -1,5 +1,17 @@
-<div>
-	<h1>{{title}}</h1>
+<div class = 'container-fluid'>
+	<div class = 'headhome'>
+		<h3>Song List</h3>
+</div>
+<div class="row">
+<article class = 'col-md-4 box' ng-repeat="song in Data" ng-model= "selectedSongs.title">
+	<strong><p class='title'>{{song.data.title}}</p></strong>
+	<strong><p class='title'>{{data.artist}}</p></strong>
+	<strong><p class='title'>{{data.genre}}</p></strong>
+
+
+
+</article>
+	<!-- <h1>{{title}}</h1>, 
 	<div>
   Grouped tasks:
   <select
@@ -19,4 +31,4 @@
 		</div>
 </div>
 
-	
+	 -->

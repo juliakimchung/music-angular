@@ -1,15 +1,32 @@
 "use strict"
 
-app.cotroller("SongListCtrl", function($scope, $sce, SongFactory,$location, AuthFactory, SerchTermData ){
-	$scope.searchText = SerchTermData;
+app.controller("SongListCtrl", function($scope, $sce, SongFactory,$location, AuthFactory ){
+	// $scope.searchText = SerchTermData;
 
-	SongFactory.getAllSavedSongs()
-	.then((songData)=> {
-		$scope.data = SongData;
-		$scope.$apply();
-		console.log("song from the SongListCtrl", songData);
-	});
+	$scope.getSong = (value)=> {
+				SongFactory.getSongs(value)
+				
+				.then((results)=> {
+					console.log(results)
+						// resolve(results);
 
+				})
+				.catch((results)=> {	
+						console.log('getSong error', results);
+				});
+				}
+
+	$scope.saveToMySong = (song)=> {
+			SongFactory.saveSong(song)
+			.then(function(){
+				console.log('song from saveToMySong', song)
+			})
+			.catch((error)=> {
+				console.log('song from saveToMySong error', error);
+			});
+		}
+
+	$scope.getSong();
 	
 })
 
