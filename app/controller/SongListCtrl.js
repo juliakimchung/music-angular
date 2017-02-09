@@ -1,36 +1,37 @@
-"use strict"
+// "use strict"
 
-app.controller("SongListCtrl", function($scope, $sce, SongFactory,$location, AuthFactory ){
-	// $scope.searchText = SerchTermData;
+// app.controller("SongListCtrl", function($scope, $sce, SongFactory,$location, AuthFactory ){
+// 	// $scope.searchText = SerchTermData;
 
-	$scope.getSong = (value)=> {
-				SongFactory.getSongs(value)
-				
-				.then((results)=> {
-					console.log(results)
-						// resolve(results);
+// 	$scope.getSong = (value)=> {
+// 				SongFactory.getSongs(value)
 
-				})
-				.catch((results)=> {	
-						console.log('getSong error', results);
-				});
-				}
+// 				.then((results)=> {
+// 					console.log(results)
+// 						// resolve(results);
+// 						console.log("title from getSong", title: SongFactory.getSongs.addSong())
 
-	$scope.saveToMySong = (song)=> {
-			SongFactory.saveSong(song)
-			.then(function(){
-				console.log('song from saveToMySong', song)
-			})
-			.catch((error)=> {
-				console.log('song from saveToMySong error', error);
-			});
-		}
+// 				})
+// 				.catch((results)=> {	
+// 						console.log('getSong error', results);
+// 				});
+// 				}
 
-	$scope.getSong();
+// 	$scope.saveToMySong = (song)=> {
+// 			SongFactory.saveSong(song)
+// 			.then(function(){
+// 				console.log('song from saveToMySong', song)
+// 			})
+// 			.catch((error)=> {
+// 				console.log('song from saveToMySong error', error);
+// 			});
+// 		}
+
+// 	$scope.getSong();
 	
-})
+// })
 
-// app.controller('SongListCtrl', function($scope){
+// // app.controller('SongListCtrl', function($scope){
 // 	$scope.title = "Welcome to your song list";
 // 	$scope.texts = "This is where you can list out your song list"
 // 	$scope.songs = [

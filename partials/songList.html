@@ -1,34 +1,30 @@
-<div class = 'container-fluid'>
-	<div class = 'headhome'>
-		<h3>Song List</h3>
-</div>
-<div class="row">
-<article class = 'col-md-4 box' ng-repeat="song in Data" ng-model= "selectedSongs.title">
-	<strong><p class='title'>{{song.data.title}}</p></strong>
-	<strong><p class='title'>{{data.artist}}</p></strong>
-	<strong><p class='title'>{{data.genre}}</p></strong>
-
-
-
-</article>
-	<!-- <h1>{{title}}</h1>, 
-	<div>
-  Grouped tasks:
-  <select
-      ng-model="theSongs"
-      ng-options="value.title group by value.artist for value in songs">
-  </select>
-</div>
-
-		<div>
-				<input type="text" ng-model='searchTermData'>
-				<div>{{texts}}</div>
-		</div>
-		<div>
-			<ul ng-repeat='song in songs | filter: searchTermData'>
-			<li>{{song.title}}<button ng-click='killSong(song)'>Finish</button></li>
-			</ul>
-		</div>
-</div>
-
-	 -->
+<h1>{{title}}</h1>
+<form>
+  <div class="form-group">
+    <label>Song Title</label>
+    <!-- TODO: Hook up this form to our JS for submitting -->
+    <input type="text" class="form-control" placeholder="title" ng-model="addSong.song_title">
+  </div>
+  <div class="form-group">
+    <label>Artist</label>
+    <input type="text" class="form-control" placeholder="artist" ng-model="addSong.artist">
+  </div>
+  <div class="form-group">
+    <label>Song Length</label>
+    <input type="text" class="form-control" placeholder="song-length" ng-model="addSong.song_length">
+  </div>
+  <div class="form-group">
+    <label>Release Date</label>
+    <input type="text" class="form-control" placeholder="release" ng-model="addSong.release_date">
+  </div>
+  <div class="form-group">
+    <label>Genre</label>
+    <input type="text" class="form-control" placeholder="genre" ng-model="addSong.genre">
+  </div>
+  <div class="form-group">
+    <label>Album</label>
+    <input type="text" class="form-control" placeholder="album" ng-model="addSong.album">
+  </div>
+  <!-- TODO: bind this button to a function -->
+  <button class="btn btn-default" ng-click="addNewSong()">{{btnText}}</button>
+</form>

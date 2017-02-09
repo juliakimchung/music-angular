@@ -20,10 +20,14 @@ $routeProvider
 	controller: 'LogInCtrl'
 })
 
-.when('/songList', {
-	templateUrl : 'partials/songList.html',
-	controller: 'SongListCtrl'
-});
+// .when('/songList', {
+// 	templateUrl : 'partials/songView.html',
+// 	controller: 'SongListCtrl'
+// })
+.when('/addSong', {
+	templateUrl: 'partials/songList.html',
+	controller: 'addCtrl'
+})
 });
 
 app.run(($location, FBCreds)=> {

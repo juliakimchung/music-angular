@@ -41,6 +41,19 @@ let getArtist = (artist) => {
 		})
 	})
 }	
+
+let postNewSong = (newSong) => {
+	return new Promise((resolve, reject)=> {
+		$http.post(`http://localhost:8000/api/song/`, angular.toJson(newSong))
+		.then((newSong)=> {
+			resolve(newSong);
+
+		})
+		.catch((error)=> {
+			console.log("error", error)
+		});
+	});
+};
 // let saveSong =(value) => {
 // 		return new Promise((resolve, reject)=> {
 // 				$http.post(`${FBCreds.URL}/songs.json`, angular.toJson(value))
@@ -90,5 +103,5 @@ let getArtist = (artist) => {
 
 // 				});
 // 		}
-		return {getSongs, getAlbum, getArtist};
+		return {getSongs, getAlbum, getArtist, postNewSong};
 })
