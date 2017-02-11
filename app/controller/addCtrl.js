@@ -19,7 +19,7 @@ app.controller("addCtrl", function( $scope, $location, SongFactory){
 	$scope.addNewSong =()=> {
 		SongFactory.saveNewSong($scope.addSong)
 		.then((value) => {
-			$location.url("#!/songs/list")
+			$location.url("#!/songList")
 			$scope.$apply()
 		});
 	};
@@ -28,7 +28,7 @@ app.controller("addCtrl", function( $scope, $location, SongFactory){
 	$scope.addAlbum = () => {
 		SongFactory.saveNewAlbum($scope.addAlbum)
 		.then((value)=> {
-			$location.url('#!/album/list')
+			$location.url('#!/albumList')
 			$scope.apply()
 		});
 	};

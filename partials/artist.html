@@ -1,10 +1,15 @@
-<h1>Artist List</h1>
-<div ng-repeat="artist in artists">
-	<div class="panel panel-default">
-		<div class="panel-body">
-		<div class="col-xs-3"><a ng-href ="#/artist/{{artist.id}}">Artist: {{artist.name}}</a></div>
-			<div class="col-xs-3">Gender: {{artist.gender}}</div>
 
+<div class="text-center container container-fluid">
+	<div class="head">
+		<h1>Artist List</h1>
+		<div ng-repeat="artist in artists">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="col-xs-3"><a ng-href ="#!/artist/{{artist.id}}">Artist: {{artist.name}}</a></div>
+						<div class="col-xs-3">Gender: {{artist.gender}}</div>
+
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

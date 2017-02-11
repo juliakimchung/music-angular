@@ -1,17 +1,22 @@
-<h1>Song List</h1>
-<div ng-repeat="song in songs">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <!-- <div class="col-xs-1"><input type="checkbox" name=""/></div> -->
-      <div class="col-xs-3"><a ng-href="#/song/{{song.id}}">Song-title: {{song.title}}</a></div>
-      <div class="col-xs-2">Genre: {{song.genre.name}}</div>
-      <div class="col-xs-3">Song Release Date: {{song.release_date}}</div>
-      <div class="col-xs-3">Album-Title: {{song.album.title}}</div>
-      <div class="col-xs-3">Artist: {{song.artist.name}}</div>
+<div class="text-center container container-fluid">
+  <div class="head">
+    <h1>Song List</h1>
+      <div ng-repeat="song in songs">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <!-- <div class="col-xs-1"><input type="checkbox" name=""/></div> -->
+            <div class="col-xs-3"><a ng-href="#!/song/{{song.id}}">Song-title: {{song.title}}</a></div>
+            <div class="col-xs-2">Genre: {{song.genre.name}}</div>
+            <div class="col-xs-3">Song Release Date: {{song.release_date}}</div>
+            <div class="col-xs-3">Album-Title: {{song.album.title}}</div>
+            <div class="col-xs-3">Artist: {{song.artist.name}}</div>
 
-      <!-- <button class="btn btn-danger" plasceholder="delete" ng-click="remove(songs.id)">Delete</button></div>
-      <button class="btn btn-info"> <a ng-href="#/edit/{{songs.id}}">Edit</a></button> -->
-      <!-- items.id means something in this partial- this particular id -->
-    </div>
+            <!-- <button class="btn btn-danger" plasceholder="delete" ng-click="remove(songs.id)">Delete</button></div>
+            <button class="btn btn-info"> <a ng-href="#/edit/{{songs.id}}">Edit</a></button> -->
+            <!-- items.id means something in this partial- this particular id -->
+          </div>
+        </div>
+      </div>
   </div>
 </div>
+

@@ -1,12 +1,17 @@
-<h1>Album List</h1>
-<div ng-repeat="album in albums">
-	<div class="panel panel-default">
-		<div class="panel-body">
+<div class="text-center container container-fluid">
+	<div class="head">
 
-			<div class="col-xs-3"><a ng-href ="#/album/{{album.id}}">Album-Title: {{album.title}}</a></div>
-			<div class="col-xs-3">Album Release Date: {{album.release_date}}</div>
-			<div class="col-xs-3">Label: {{album.label}}</div>
+		<h1>Album List</h1>
+			<div ng-repeat="album in albums">
+				<div class="panel panel-default">
+					<div class="panel-body">
 
-		</div>
+							<div class="col-xs-3"><a ng-href ="#!/album/{{album.id}}">Album-Title: {{album.title}}</a></div>
+							<div class="col-xs-3">Album Release Date: {{album.release_date}}</div>
+							<div class="col-xs-3">Label: {{album.label}}</div>
+
+					</div>
+				</div>
+			</div>
 	</div>
 </div>
