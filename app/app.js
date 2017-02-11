@@ -23,7 +23,24 @@ $routeProvider
 .when('/songList', {
 	templateUrl : 'partials/songList.html',
 	controller: 'SongListCtrl'
-});
+})
+.when('/addSong', {
+	templateUrl: 'partials/addSong.html',
+	controller: 'addCtrl'
+})
+.when('/addAlbum', {
+	templateUrl: 'partials/album.html',
+	controller: 'addCtrl'
+})
+.when('/albumList', {
+	templateUrl: 'partials/albumList.html',
+	controller: 'AlbumCtrl'
+
+})
+.when('/artistList', {
+	templateUrl: 'partials/artist.html',
+	controller: 'ArtistCtrl'
+})
 });
 
 app.run(($location, FBCreds)=> {
