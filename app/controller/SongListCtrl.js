@@ -5,13 +5,11 @@ app.controller("SongListCtrl", function($scope,  SongFactory, $location ){
 	$scope.getSongList = (value)=> {
 				SongFactory.getSongs(value)
 
-				.then((results)=> {
-					console.log(results);
-					
+				.then((songArray)=> {
+					$scope.songs = songArray;
+					console.log("songArray from SongListCtrl", songArray );
+					$scope.$apply()
 					})
-					
-				
-				
 				}
 
 

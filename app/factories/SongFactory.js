@@ -26,8 +26,8 @@ let getAlbum = (album) => {
 	return new Promise((resolve, reject) => {
 		$http.get(`http://localhost:8000/api/album/`)
 		.then((itemObject) => {
-			resolve(itemObject);
 			console.log('itemObject after get album', itemObject)
+			resolve(itemObject);
 		})
 		.catch((error)=> {
 			console.log("error", error );

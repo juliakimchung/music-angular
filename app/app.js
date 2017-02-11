@@ -32,6 +32,11 @@ $routeProvider
 	templateUrl: 'partials/album.html',
 	controller: 'addCtrl'
 })
+.when('/ListAlbum', {
+	templataeUrl: 'partials/albumList.html',
+	controller: 'AlbumCtrl'
+
+})
 });
 
 app.run(($location, FBCreds)=> {
