@@ -1,19 +1,25 @@
 "use strict"
-app.factory("SongFactory", function( $http, AuthFactory, $location){
+app.factory("SongFactory", function( $http, $location){
 
-		let fireUser = AuthFactory.getUser();
 
+let songListArr = [];
 let getSongs = (song) => {
 	return new Promise((resolve, reject) => {
 		$http.get(`http://localhost:8000/api/song/`)
 		.then((itemObject) => {
-			resolve(itemObject);
+			let songCollection = itemObject.data;
 			console.log('itemObject after get songs', itemObject)
+			Object.keys(songCollection).forEach((key) => {
+					songCollection[key].id = key;
+					songListArr.push(songCollection[key]);
+
+				resolve(songListArr);
 		})
 		.catch((error)=> {
 			console.log("getSongs from song Factory error", error );
 		});
 	})
+})
 }
 
 let getAlbum = (album) => {
@@ -42,11 +48,24 @@ let getArtist = (artist) => {
 	})
 }	
 
-let postNewSong = (newSong) => {
+let saveNewSong = (newSong) => {
 	return new Promise((resolve, reject)=> {
 		$http.post(`http://localhost:8000/api/song/`, angular.toJson(newSong))
 		.then((newSong)=> {
 			resolve(newSong);
+
+		})
+		.catch((error)=> {
+			console.log("error", error)
+		});
+	});
+};
+
+let saveNewAlbum = (newAlbum) => {
+	return new Promise((resolve, reject)=> {
+		$http.post(`http://localhost:8000/api/album/`, angular.toJson(newAlbum))
+		.then((newAlbum)=> {
+			resolve(newAlbum);
 
 		})
 		.catch((error)=> {
@@ -103,5 +122,5 @@ let postNewSong = (newSong) => {
 
 // 				});
 // 		}
-		return {getSongs, getAlbum, getArtist, postNewSong};
+		return {getSongs, getAlbum, getArtist, saveNewSong, saveNewAlbum};
 })

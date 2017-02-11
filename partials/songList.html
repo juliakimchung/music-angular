@@ -1,30 +1,17 @@
-<h1>{{title}}</h1>
-<form>
-  <div class="form-group">
-    <label>Song Title</label>
-    <!-- TODO: Hook up this form to our JS for submitting -->
-    <input type="text" class="form-control" placeholder="title" ng-model="addSong.song_title">
+<h1>Song List</h1>
+<div ng-repeat="song in songs">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-xs-1"><input type="checkbox" name=""/></div>
+      <div class="col-xs-7"><a ng-href="#/songs/{{song.id}}">{{songs.data.album}}</a></div>
+      <div class="col-xs-2">{{songs.data.genre}}</div>
+      <div class="col-xs-1">{{songs.data.release_date}}</div>
+      <div class="col-xs-1">{{songs.data.song_length}}</div>
+      <div class="col-xs-1">{{songs.data.title}}</div>
+
+      <button class="btn btn-danger" plasceholder="delete" ng-click="remove(songs.id)">Delete</button></div>
+      <button class="btn btn-info"> <a ng-href="#/edit/{{songs.id}}">Edit</a></button>
+      <!-- items.id means something in this partial- this particular id -->
+    </div>
   </div>
-  <div class="form-group">
-    <label>Artist</label>
-    <input type="text" class="form-control" placeholder="artist" ng-model="addSong.artist">
-  </div>
-  <div class="form-group">
-    <label>Song Length</label>
-    <input type="text" class="form-control" placeholder="song-length" ng-model="addSong.song_length">
-  </div>
-  <div class="form-group">
-    <label>Release Date</label>
-    <input type="text" class="form-control" placeholder="release" ng-model="addSong.release_date">
-  </div>
-  <div class="form-group">
-    <label>Genre</label>
-    <input type="text" class="form-control" placeholder="genre" ng-model="addSong.genre">
-  </div>
-  <div class="form-group">
-    <label>Album</label>
-    <input type="text" class="form-control" placeholder="album" ng-model="addSong.album">
-  </div>
-  <!-- TODO: bind this button to a function -->
-  <button class="btn btn-default" ng-click="addNewSong()">{{btnText}}</button>
-</form>
+</div>

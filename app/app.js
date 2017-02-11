@@ -20,12 +20,16 @@ $routeProvider
 	controller: 'LogInCtrl'
 })
 
-// .when('/songList', {
-// 	templateUrl : 'partials/songView.html',
-// 	controller: 'SongListCtrl'
-// })
+.when('/songList', {
+	templateUrl : 'partials/songList.html',
+	controller: 'SongListCtrl'
+})
 .when('/addSong', {
-	templateUrl: 'partials/songList.html',
+	templateUrl: 'partials/addSong.html',
+	controller: 'addCtrl'
+})
+.when('/addAlbum', {
+	templateUrl: 'partials/album.html',
 	controller: 'addCtrl'
 })
 });

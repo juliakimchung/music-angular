@@ -1,5 +1,5 @@
 "use strict"
-app.controller("addCtrl", function($http,$location, $AuthFactory, $SongFactory){
+app.controller("addCtrl", function( $scope, $location, SongFactory){
 	$scope.addSong = {
 		song_title: "",
 		song_length: "",
@@ -12,22 +12,23 @@ app.controller("addCtrl", function($http,$location, $AuthFactory, $SongFactory){
 	$scope.addArtist = {}
 	$scope.addAlbum = {}
 	$scope.addGenre = {}
-	$scope.title = "Add a new song";
-	$scope.btnText = "Save your new song";
+	$scope.title = "Add Your Choice";
+	$scope.btnText = "Save ";
 
 
 	$scope.addNewSong =()=> {
-		SongFactory.postSong($scope.addSong)
+		SongFactory.saveNewSong($scope.addSong)
 		.then((value) => {
-			$location.url("songs/list")
+			$location.url("#!/songs/list")
 			$scope.$apply()
 		});
 	};
 
+
 	$scope.addAlbum = () => {
-		SongFactory.postAlbum($scope.addAlbum)
+		SongFactory.saveNewAlbum($scope.addAlbum)
 		.then((value)=> {
-			$location.url('album/list')
+			$location.url('#!/album/list')
 			$scope.apply()
 		});
 	};
