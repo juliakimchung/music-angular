@@ -3,12 +3,12 @@
 app.controller("AlbumCtrl", function($scope, $location, SongFactory){
 
 	$scope.getAlbumList = (value) => {
-		SongFactory.getAlbum(items)
+		SongFactory.getAlbum(value)
 
-		.then((itmesArray)=> {
-			$scope.albums = itemsArray;
-			console.log("itmesArray after getAlbumList from AlbumCtrl", itmesArray );
-			$scope.$apply()
+		.then((albumArray)=> {
+			$scope.albums = albumArray;
+			console.log("itmesArray after getAlbumList from AlbumCtrl", albumArray );
+			$scope.$apply();
 
 		});
 

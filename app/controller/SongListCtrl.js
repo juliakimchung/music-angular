@@ -2,7 +2,7 @@
 
 app.controller("SongListCtrl", function($scope,  SongFactory, $location ){
 	// $scope.searchText = SerchTermData;
-	$scope.getSongList = (value)=> {
+	$scope.getSongList = (value) => {
 				SongFactory.getSongs(value)
 
 				.then((songArray)=> {

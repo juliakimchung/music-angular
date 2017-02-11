@@ -1,7 +1,7 @@
 "use strict"
 app.factory("SongFactory", function( $http, $location){
-
-
+let artistArr = [];
+let albumListArr = [];
 let songListArr = [];
 let getSongs = (song) => {
 	return new Promise((resolve, reject) => {
@@ -13,21 +13,28 @@ let getSongs = (song) => {
 					songCollection[key].id = key;
 					songListArr.push(songCollection[key]);
 
-				resolve(songListArr);
+			resolve(songListArr);
+		})
 		})
 		.catch((error)=> {
 			console.log("getSongs from song Factory error", error );
 		});
 	})
-})
 }
+
 
 let getAlbum = (album) => {
 	return new Promise((resolve, reject) => {
 		$http.get(`http://localhost:8000/api/album/`)
 		.then((itemObject) => {
 			console.log('itemObject after get album', itemObject)
-			resolve(itemObject);
+			let albumCollection = itemObject.data;
+			Object.keys(albumCollection).forEach((key)=>{
+				albumCollection[key].id = key;
+				albumListArr.push(albumCollection[key]);
+				console.log("albumListArr from SongFactory",albumListArr );
+			resolve(albumListArr);
+			})
 		})
 		.catch((error)=> {
 			console.log("error", error );
@@ -39,8 +46,13 @@ let getArtist = (artist) => {
 	return new Promise((resolve, reject) => {
 		$http.get(`http://localhost:8000/api/artist/`)
 		.then((itemObject) => {
-			resolve(itemObject);
-			console.log('itemObject after get artist', itemObject)
+			let artistCollection = itemObject.data;
+			Object.keys(artistCollection).forEach((key)=> {
+				artistCollection[key].id = key;
+				artistArr.push(artistCollection[key]);
+				console.log('itemObject after get artist', itemObject)
+			resolve(artistArr);
+			})
 		})
 		.catch((error)=> {
 			console.log("error", error );

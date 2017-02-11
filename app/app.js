@@ -32,10 +32,14 @@ $routeProvider
 	templateUrl: 'partials/album.html',
 	controller: 'addCtrl'
 })
-.when('/ListAlbum', {
-	templataeUrl: 'partials/albumList.html',
+.when('/albumList', {
+	templateUrl: 'partials/albumList.html',
 	controller: 'AlbumCtrl'
 
+})
+.when('/artistList', {
+	templateUrl: 'partials/artist.html',
+	controller: 'ArtistCtrl'
 })
 });
 
