@@ -2,7 +2,7 @@
 	<div class="head">
 
 		<h1>Album List</h1>
-			<div ng-repeat="album in albums">
+			<div ng-repeat="album in albums |filter:{title: searchText.search}">
 				<div class="panel panel-default">
 					<div class="panel-body">
 

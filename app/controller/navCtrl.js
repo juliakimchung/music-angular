@@ -2,28 +2,28 @@
 app.controller("navCtrl", function($scope, SearchTermData){
 	
 	$scope.searchText = SearchTermData;
-	$scope.navItems = [
+	// $scope.navItems = [
 
-	// 	{name: 'Login/Register',
-	// 	 url: '#/login'
+	// // 	{name: 'Login/Register',
+	// // 	 url: '#/login'
+	// // },
+	// // 	{name: 'Logout',
+	// // 	 url: '#/logout'
+
+	// // },
+	// 	{name: 'Albums',
+	// 	 url: '#/albumList'
 	// },
-	// 	{name: 'Logout',
-	// 	 url: '#/logout'
+	// 	{name: 'Songs',
+	// 	 url: '#/songList'
 
 	// },
-		{name: 'Albums',
-		 url: '#/albumList'
-	},
-		{name: 'Songs',
-		 url: '#/songList'
+	// 	{name: 'Artists',
+	// 	 url: '#/artistList'
+	// },
 
-	},
-		{name: 'Artists',
-		 url: '#/artistList'
-	},
-
-		{name: 'Search',
-		 url: '#/songs/search'
-	}
- ]
+	// 	{name: 'Search',
+	// 	 url: '#/songs/search'
+	// }
+ // ]
 })

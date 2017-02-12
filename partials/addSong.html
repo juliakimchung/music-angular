@@ -1,30 +1,35 @@
-<h1>{{title}}</h1>
-<form>
-  <div class="form-group">
-    <label>Song Title</label>
-    <!-- TODO: Hook up this form to our JS for submitting -->
-    <input type="text" class="form-control" placeholder="title" ng-model="addSong.song_title">
+<div class="text-center container container-fluid">
+  <div class="head">
+
+    <h1>{{title}}</h1>
+    <form>
+      <div class="form-group">
+        <label>Song Title</label>
+        <!-- TODO: Hook up this form to our JS for submitting -->
+        <input type="text" class="form-control" placeholder="title" ng-model="addSong.song_title">
+      </div>
+      <div class="form-group">
+        <label>Artist</label>
+        <input type="text" class="form-control" placeholder="artist" ng-model="addSong.artist">
+      </div>
+      <div class="form-group">
+        <label>Song Length</label>
+        <input type="text" class="form-control" placeholder="song-length" ng-model="addSong.song_length">
+      </div>
+      <div class="form-group">
+        <label>Release Date</label>
+        <input type="text" class="form-control" placeholder="release" ng-model="addSong.release_date">
+      </div>
+      <div class="form-group">
+        <label>Genre</label>
+        <input type="text" class="form-control" placeholder="genre" ng-model="addSong.genre">
+      </div>
+      <div class="form-group">
+        <label>Album</label>
+        <input type="text" class="form-control" placeholder="album" ng-model="addSong.album">
+      </div>
+      <!-- TODO: bind this button to a function -->
+      <button class="btn btn-default" ng-click="addNewSong()">{{btnText}}</button>
+    </form>
   </div>
-  <div class="form-group">
-    <label>Artist</label>
-    <input type="text" class="form-control" placeholder="artist" ng-model="addSong.artist">
-  </div>
-  <div class="form-group">
-    <label>Song Length</label>
-    <input type="text" class="form-control" placeholder="song-length" ng-model="addSong.song_length">
-  </div>
-  <div class="form-group">
-    <label>Release Date</label>
-    <input type="text" class="form-control" placeholder="release" ng-model="addSong.release_date">
-  </div>
-  <div class="form-group">
-    <label>Genre</label>
-    <input type="text" class="form-control" placeholder="genre" ng-model="addSong.genre">
-  </div>
-  <div class="form-group">
-    <label>Album</label>
-    <input type="text" class="form-control" placeholder="album" ng-model="addSong.album">
-  </div>
-  <!-- TODO: bind this button to a function -->
-  <button class="btn btn-default" ng-click="addNewSong()">{{btnText}}</button>
-</form>
+</div>

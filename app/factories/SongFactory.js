@@ -13,8 +13,8 @@ let getSongs = (song) => {
 					songCollection[key].id = key;
 					songListArr.push(songCollection[key]);
 
-			resolve(songListArr);
 		})
+			resolve(songListArr);
 		})
 		.catch((error)=> {
 			console.log("getSongs from song Factory error", error );
@@ -32,9 +32,9 @@ let getAlbum = (album) => {
 			Object.keys(albumCollection).forEach((key)=>{
 				albumCollection[key].id = key;
 				albumListArr.push(albumCollection[key]);
-				console.log("albumListArr from SongFactory",albumListArr );
-			resolve(albumListArr);
 			})
+			console.log("albumListArr from SongFactory",albumListArr );
+			resolve(albumListArr);
 		})
 		.catch((error)=> {
 			console.log("error", error );
@@ -50,9 +50,9 @@ let getArtist = (artist) => {
 			Object.keys(artistCollection).forEach((key)=> {
 				artistCollection[key].id = key;
 				artistArr.push(artistCollection[key]);
-				console.log('itemObject after get artist', itemObject)
-			resolve(artistArr);
 			})
+			console.log('itemObject after get artist', itemObject)
+			resolve(artistArr);
 		})
 		.catch((error)=> {
 			console.log("error", error );
