@@ -2,7 +2,7 @@
 <div class="text-center container container-fluid">
 	<div class="head">
 		<h1>Artist List</h1>
-		<div ng-repeat="artist in artists">
+		<div ng-repeat="artist in artists|filter:{name: searchText.search}">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<div class="col-xs-3"><a ng-href ="#!/artist/{{artist.id}}">Artist: {{artist.name}}</a></div>

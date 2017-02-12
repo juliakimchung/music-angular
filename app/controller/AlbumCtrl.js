@@ -1,7 +1,7 @@
 "use strict"
 
-app.controller("AlbumCtrl", function($scope, $location, SongFactory){
-
+app.controller("AlbumCtrl", function($scope, $location, SongFactory, SearchTermData){
+	$scope.searchText = SearchTermData;
 	$scope.getAlbumList = (value) => {
 		SongFactory.getAlbum(value)
 

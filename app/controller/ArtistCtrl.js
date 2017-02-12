@@ -1,6 +1,7 @@
 "use strict"
 
-app.controller("ArtistCtrl", function($scope, SongFactory, $location){
+app.controller("ArtistCtrl", function($scope, SongFactory, $location, SearchTermData){
+	$scope.searchText = SearchTermData;
 	$scope.getArtistList = (value) => {
 		SongFactory.getArtist(value)
 		.then((artistArr)=> {

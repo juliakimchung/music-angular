@@ -20,7 +20,7 @@ $routeProvider
 	controller: 'LogInCtrl'
 })
 
-.when('/songList', {
+.when('/songs', {
 	templateUrl : 'partials/songList.html',
 	controller: 'SongListCtrl'
 })
@@ -32,12 +32,12 @@ $routeProvider
 	templateUrl: 'partials/album.html',
 	controller: 'addCtrl'
 })
-.when('/albumList', {
+.when('/albums', {
 	templateUrl: 'partials/albumList.html',
 	controller: 'AlbumCtrl'
 
 })
-.when('/artistList', {
+.when('/artists', {
 	templateUrl: 'partials/artist.html',
 	controller: 'ArtistCtrl'
 })

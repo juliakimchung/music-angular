@@ -1,7 +1,7 @@
 "use strict"
 
-app.controller("SongListCtrl", function($scope,  SongFactory, $location ){
-	// $scope.searchText = SerchTermData;
+app.controller("SongListCtrl", function($scope,  SongFactory, $location, SearchTermData ){
+	$scope.searchText = SearchTermData;
 	$scope.getSongList = (value) => {
 				SongFactory.getSongs(value)
 
@@ -13,7 +13,7 @@ app.controller("SongListCtrl", function($scope,  SongFactory, $location ){
 				}
 
 
-	$scope.getSongList()
+	// $scope.getSongList()
 
 })
 
