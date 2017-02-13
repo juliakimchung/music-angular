@@ -82,14 +82,15 @@ let saveNewAlbum = (newAlbum) => {
 		})
 		.catch((error)=> {
 			console.log("error", error);
-		});
-	});
+		})
+	})
 }
 
 let saveNewArtist = (newArtist) => {
 	return new Promise((resolve, reject)=> {
 		$http.post(`http://localhost:8000/api/artist/`, angular.toJson(newArtist))
 		.then((newArtist)=> {
+			console.log("newArtist after saveNewArtist from SongFactory", newArtist);
 			resolve(newArtist);
 		})
 		.catch((error)=> {
@@ -146,5 +147,5 @@ let saveNewArtist = (newArtist) => {
 
 // 				});
 // 		}
-		return {getSongs, getAlbum, getArtist, saveNewSong, saveNewAlbum};
+		return {getSongs, getAlbum, getArtist, saveNewSong, saveNewAlbum, saveNewArtist};
 })

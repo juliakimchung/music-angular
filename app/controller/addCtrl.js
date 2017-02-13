@@ -1,16 +1,24 @@
 "use strict"
 app.controller("addCtrl", function( $scope, $location, SongFactory){
 	$scope.addSong = {
-		song_title: "",
+		title: "",
 		song_length: "",
-		year_released: "",
+		release_date: "",
 		artist: "",
 		genre: "",
 		album: ""
 
 	}
-	$scope.addArtist = {}
-	$scope.addAlbum = {}
+	$scope.addArtist = {
+		name: "",
+		gender: ""
+	}
+	$scope.addAlbum = {
+		title: "",
+		label:"",
+		album_length:"",
+		release_date:""
+	}
 	$scope.addGenre = {}
 	$scope.title = "Add Your Choice";
 	$scope.btnText = "Save ";
@@ -20,7 +28,7 @@ app.controller("addCtrl", function( $scope, $location, SongFactory){
 		SongFactory.saveNewSong($scope.addSong)
 		.then((value) => {
 			$location.url("#!/songList")
-			$scope.$apply()
+			$scope.$apply();
 		});
 	};
 
@@ -29,7 +37,7 @@ app.controller("addCtrl", function( $scope, $location, SongFactory){
 		SongFactory.saveNewAlbum($scope.addAlbum)
 		.then((value)=> {
 			$location.url('#!/albumList')
-			$scope.apply()
+			$scope.$apply();
 		});
 	};
 
@@ -37,7 +45,7 @@ app.controller("addCtrl", function( $scope, $location, SongFactory){
 		SongFactory.saveNewArtist($scope.addArtist)
 		.then((value)=> {
 			$location.url('#!/artistList')
-			$scope.apply()
+			$scope.$apply();
 		});
 	}
 
