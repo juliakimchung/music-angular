@@ -1,0 +1,27 @@
+<div class="text-center container container-fluid">
+  <div class="head">
+
+    <h1>{{title}}</h1>
+    <form>
+      <div class="form-group">
+        <label>Album Title</label>
+        <!-- TODO: Hook up this form to our JS for submitting -->
+        <input type="text" class="form-control" placeholder="title" ng-model="addAlbum.title">
+      </div>
+      <div class="form-group">
+        <label>Label</label>
+        <input type="text" class="form-control" placeholder="label" ng-model="addAlbum.label">
+      </div>
+      <div class="form-group">
+        <label>Album Length</label>
+        <input type="text" class="form-control" placeholder="album-length" ng-model="addAlbum.album_length">
+      </div>
+      <div class="form-group">
+        <label>Release Date</label>
+        <input type="text" class="form-control" placeholder="release" ng-model="addAlbum.release_date">
+      </div>
+      <!-- TODO: bind this button to a function -->
+      <button class="btn btn-default" ng-click="addNewAlbum()">{{btnText}}</button>
+    </form>
+  </div>
+</div>

@@ -38,8 +38,8 @@ let getAlbum = (album) => {
 		})
 		.catch((error)=> {
 			console.log("error", error );
-		})
-	})
+		});
+	});
 }
 
 let getArtist = (artist) => {
@@ -68,10 +68,10 @@ let saveNewSong = (newSong) => {
 
 		})
 		.catch((error)=> {
-			console.log("error", error)
+			console.log("error", error);
 		});
 	});
-};
+}
 
 let saveNewAlbum = (newAlbum) => {
 	return new Promise((resolve, reject)=> {
@@ -81,10 +81,23 @@ let saveNewAlbum = (newAlbum) => {
 
 		})
 		.catch((error)=> {
-			console.log("error", error)
+			console.log("error", error);
+		})
+	})
+}
+
+let saveNewArtist = (newArtist) => {
+	return new Promise((resolve, reject)=> {
+		$http.post(`http://localhost:8000/api/artist/`, angular.toJson(newArtist))
+		.then((newArtist)=> {
+			console.log("newArtist after saveNewArtist from SongFactory", newArtist);
+			resolve(newArtist);
+		})
+		.catch((error)=> {
+			console.log("error",error );
 		});
 	});
-};
+}
 // let saveSong =(value) => {
 // 		return new Promise((resolve, reject)=> {
 // 				$http.post(`${FBCreds.URL}/songs.json`, angular.toJson(value))
@@ -134,5 +147,5 @@ let saveNewAlbum = (newAlbum) => {
 
 // 				});
 // 		}
-		return {getSongs, getAlbum, getArtist, saveNewSong, saveNewAlbum};
+		return {getSongs, getAlbum, getArtist, saveNewSong, saveNewAlbum, saveNewArtist};
 })
