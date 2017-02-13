@@ -29,13 +29,16 @@ $routeProvider
 	controller: 'addCtrl'
 })
 .when('/addAlbum', {
-	templateUrl: 'partials/album.html',
+	templateUrl: 'partials/addAlbum.html',
+	controller: 'addCtrl'
+})
+.when('/addArtist', {
+	templateUrl: 'partials/addArtist.html',
 	controller: 'addCtrl'
 })
 .when('/albums', {
 	templateUrl: 'partials/albumList.html',
 	controller: 'AlbumCtrl'
-
 })
 .when('/artists', {
 	templateUrl: 'partials/artist.html',

@@ -25,13 +25,21 @@ app.controller("addCtrl", function( $scope, $location, SongFactory){
 	};
 
 
-	$scope.addAlbum = () => {
+	$scope.addNewAlbum = () => {
 		SongFactory.saveNewAlbum($scope.addAlbum)
 		.then((value)=> {
 			$location.url('#!/albumList')
 			$scope.apply()
 		});
 	};
+
+	$scope.addNewArtist = () => {
+		SongFactory.saveNewArtist($scope.addArtist)
+		.then((value)=> {
+			$location.url('#!/artistList')
+			$scope.apply()
+		});
+	}
 
 
 
