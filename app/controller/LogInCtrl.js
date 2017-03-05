@@ -26,7 +26,7 @@ app.controller("LogInCtrl", function($scope, $http, $location){
 		})
 		.then((userData)=> {
 			if(userData.data.success == true){
-				$location.path('/#!/songs')
+				$location.path('/#!/songs/')
 			}
 		});
 	};
@@ -45,11 +45,11 @@ app.controller("LogInCtrl", function($scope, $http, $location){
 		.then((user) => {
 				if (user.data.success == true){
 			 			console.log("user after login", user );
-			 			$location.path('/#!/songs');
+			 			$location.path('/#!/songs/');
 
 				} 
 				else{
-					conso("registrations failed")
+					console.log("registrations failed")
 				}
 		});
 	};
