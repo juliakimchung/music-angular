@@ -1,22 +1,56 @@
 "use strict";
-app.controller("LogInCtrl", function($scope, AuthFactory, $window){
-	AuthFactory.logoutUser();
+app.controller("LogInCtrl", function($scope, $http, $location){
+	
 
-	$scope.account = {
-		email: "jul@me.com",
-		password: "123456"
+	$scope.user= {
+		username: "rodypony",
+		password: "123456",
+		email: 'jul@me.com',
+		first_name: "Rody",
+		last_name: "Pony",
 	};
 	$scope.register = () => {
-		AuthFactory.createUser($scope.account)
+		$http({
+			url: "/#!/login",
+			method: "POST",
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+			data: {
+				'username': $scope.user.username,
+				'password': $scope.user.password,
+				'email': $scope.user.email,
+				'first_name': $scope.user.first_name,
+				'last_name': $scope.user.last_name
+				}
+		})
 		.then((userData)=> {
-			$scope.login();
+			if(userData.data.success == true){
+				$location.path('/#!/songs')
+			}
 		});
 	};
 	$scope.login =() => {
-		AuthFactory.loginUser($scope.account)
+		$http({
+			url: "/#!/login",
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlendcoded"
+			},
+			data: {
+				'username': $scope.user.username,
+				'password': $scope.user.password
+			}
+		})
 		.then((user) => {
-			 console.log("user after login", user );
-			$window.location.href = '/#!/home';
+				if (user.data.success == true){
+			 			console.log("user after login", user );
+			 			$location.path('/#!/songs');
+
+				} 
+				else{
+					conso("registrations failed")
+				}
 		});
 	};
 });
